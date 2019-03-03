@@ -27,21 +27,23 @@ public class Galaxy_trading_guide {
         sumItem.put("M", 1000); //enter the roman data
 
         System.out.println("");
+        
         Scanner catageory = new Scanner(System.in);
         Scanner value = new Scanner(System.in);
         Scanner item = new Scanner(System.in);
+        //create scanner object        
 
         System.out.print("How much your item category? ");
-        int vCategory = catageory.nextInt();
+        int vCategory = catageory.nextInt(); //get total of category item
 
-        String vitem = null;
+        String vitem;
         String getValue;
         for (int i = 1; i <= vCategory; i++) {
             System.out.println("Please input yours item :");
             vitem = item.next();
             getValue = value.next();
 
-            itemData.put(vitem, getValue.toUpperCase());
+            itemData.put(vitem.toUpperCase(), getValue.toUpperCase());
         }
         
         for (Map.Entry<String, String> entry : itemData.entrySet()) {
@@ -51,6 +53,7 @@ public class Galaxy_trading_guide {
             if(sumItem.containsKey(value1))
                 System.out.println(key+" is "+sumItem.get(value1)+" Credit");
             
+            else System.out.println("I have no idea what you are talking about");
         }
 
     }
