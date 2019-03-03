@@ -14,7 +14,7 @@ public class Galaxy_trading_guide {
 
     public static void main(String[] args) {
         Map<String, Integer> sumItem = new HashMap();
-        Map<String, String> itemData = new HashMap();
+        Map<String, String> itemData = new HashMap(); //save input data to hashmap
 
         System.out.println("The symbol value is:\nI 1\nV is 5\nX is 10\nL is 50\nC is 100\nD is 500\nM is 1,000");
 
@@ -24,7 +24,7 @@ public class Galaxy_trading_guide {
         sumItem.put("L", 50);
         sumItem.put("C", 100);
         sumItem.put("D", 500);
-        sumItem.put("M", 1000);
+        sumItem.put("M", 1000); //enter the roman data
 
         System.out.println("");
         Scanner catageory = new Scanner(System.in);
@@ -34,15 +34,25 @@ public class Galaxy_trading_guide {
         System.out.print("How much your item category? ");
         int vCategory = catageory.nextInt();
 
+        String vitem = null;
+        String getValue;
         for (int i = 1; i <= vCategory; i++) {
             System.out.println("Please input yours item :");
-            String vitem = item.next();
-            String getValue = value.next();
+            vitem = item.next();
+            getValue = value.next();
+
+            itemData.put(vitem, getValue.toUpperCase());
+        }
+        
+        for (Map.Entry<String, String> entry : itemData.entrySet()) {
+            String key = entry.getKey();
+            String value1 = entry.getValue();
             
-            itemData.put(vitem, getValue);
+            System.out.println(key+" is "+value1);
+            
         }
 
-        System.out.println(itemData);
+        
 
 //        if (sumItem.containsKey(getValue.toUpperCase())) {
 //            System.out.println("Input is " + getValue.toUpperCase() + " = " + sumItem.get(getValue.toUpperCase()));
