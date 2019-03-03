@@ -48,17 +48,11 @@ public class Galaxy_trading_guide {
             String key = entry.getKey();
             String value1 = entry.getValue();
             
-            System.out.println(key+" is "+value1);
+            if(sumItem.containsKey(value1))
+                System.out.println(key+" is "+sumItem.get(value1)+" Credit");
             
         }
 
-        
-
-//        if (sumItem.containsKey(getValue.toUpperCase())) {
-//            System.out.println("Input is " + getValue.toUpperCase() + " = " + sumItem.get(getValue.toUpperCase()));
-//        } else {
-//            System.out.println("I have no idea what you are talking about.");
-//        }
     }
 
 }
