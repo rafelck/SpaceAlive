@@ -39,11 +39,14 @@ public class Galaxy_trading_guide {
         String vitem;
         String getValue;
         for (int i = 1; i <= vCategory; i++) {
-            System.out.println("Please input yours item :");
+            System.out.println("Item "+i+" : ");
+            System.out.print("Please input yours item :");
             vitem = item.next();
+            System.out.print("Please input symbol value :");
             getValue = value.next();
 
             itemData.put(vitem.toUpperCase(), getValue.toUpperCase());
+            System.out.println("");
         }
         
         for (Map.Entry<String, String> entry : itemData.entrySet()) {
